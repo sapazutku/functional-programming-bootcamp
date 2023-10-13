@@ -10,6 +10,7 @@ public class Practise6 {
         // TODO: implement method that accepts list of SavedPaypalAccount and returns first active saved account.
         // TODO: if there is no such account, it will throw NotFoundException.
 
-        return null;
+        return savedPaypalAccounts.stream().filter(savedPaypalAccount -> savedPaypalAccount.isActive())
+                .findFirst().orElseThrow(()-> new RuntimeException("Not Found Exception"));
     }
 }
